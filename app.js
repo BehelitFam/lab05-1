@@ -50,7 +50,13 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-    
+    var sum = a + b + c;
+    var product = a * b * c;
+    var sumSummary = a + ' and ' + b + ' and ' + c + ' sum to ' + sum + '.';
+    var prodSummary = 'The product of ' + a + ' and ' + b + ' and ' + c + ' is ' + product + '.';
+    sumAndMultReturn = [sum, product, sumSummary, prodSummary];
+    console.log(sumAndMultReturn);
+    return sumAndMultReturn;
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
