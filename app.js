@@ -8,8 +8,8 @@ Test this function by hand in the console to get it working, and when you think 
 // Write your code here
 function sum(a, b) { //eslint-disable-line
     var sum = a + b;
-    var sumDesc = 'The sum of ' + a + ' and ' + b + ' is ' + sum + '.';
-    var sumReturn = [sum, sumDesc];
+    var sumSummary = 'The sum of ' + a + ' and ' + b + ' is ' + sum + '.';
+    var sumReturn = [sum, sumSummary];
     console.log(sumReturn);
     return sumReturn;
 }
@@ -27,7 +27,11 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiply(a, b) { //eslint-disable-line
-
+    var product = a * b;
+    var prodSummary = 'The product of ' + a + ' and ' + b + ' is ' + product + '.';
+    var prodReturn = [product, prodSummary];
+    console.log(prodReturn);
+    return prodReturn;
 }
 
 // Here is the test for multiply(); uncomment it to run it
@@ -45,7 +49,7 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function sumAndMultiply(a, b, c) { //eslint-disable-line
-
+    
 }
 
 // Here is the test for sumAndMultiply(); uncomment it to run it
