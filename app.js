@@ -77,21 +77,15 @@ function sumArray(sumArr) { //eslint-disable-line
     var currSum = 0;
     var arraySummary = "";
     for (var i = 0; i < (sumArr.length); i++) {
-        console.log('currSum is ' + currSum + ' at top of loop.');
         currSum = sum(currSum, sumArr[i])[0];
-        console.log('added ' + sumArr[i] + ' to current sum. current sum is ' + currSum);
         arraySummary = sum(arraySummary, sumArr[i])[0];
         if (i < (sumArr.length - 1)) {
             arraySummary = sum(arraySummary, ',')[0];
-            console.log('added comma; arraySummary is ' + arraySummary);
         }
     }
-    console.log('currSum is ' + currSum);
-    console.log('arraySummary before adding end message is ' + arraySummary);
     arraySummary = sum(sum(sum(arraySummary, ' was passed in as an array of numbers, and ')[0], currSum)[0], ' is their sum.')[0];
     console.log(arraySummary);
     var arrReturn = [currSum, arraySummary];
-    console.log('arrReturn is ' + arrReturn);
     return arrReturn;
 }
 
@@ -110,7 +104,19 @@ Test this function by hand in the console to get it working, and when you think 
 
 // Write your code here
 function multiplyArray(multArr) { //eslint-disable-line
-
+    var currProd = multArr[0];
+    var prodSummary = 'The numbers ' + multArr[0];
+    for (var i = 1; i < multArr.length; i++) {
+        currProd = multiply(currProd, multArr[i])[0];
+        prodSummary += ',' + multArr[i];
+        console.log('currProd is ' + currProd);
+        console.log(prodSummary);
+    }
+    console.log('currProd is ' + currProd + ' after loop');
+    console.log('prodSummary is ' + prodSummary + ' after loop');
+    prodSummary += ' have a product of ' + currProd + '.';
+    console.log('return value is \[' + currProd + ', ' + prodSummary + '\]');
+    return [currProd, prodSummary];
 }
 
 // Here is the test for multiplyArray(); uncomment it to run it
