@@ -88,7 +88,7 @@ function sumArray(sumArr) { //eslint-disable-line
     }
     console.log('currSum is ' + currSum);
     console.log('arraySummary before adding end message is ' + arraySummary);
-    arraySummary = sum(arraySummary, ' was passed in as an array of numbers, and ' + currSum + ' is their sum.')[0];
+    arraySummary = sum(sum(sum(arraySummary, ' was passed in as an array of numbers, and ')[0], currSum)[0], ' is their sum.')[0];
     console.log(arraySummary);
     var arrReturn = [currSum, arraySummary];
     console.log('arrReturn is ' + arrReturn);
