@@ -10,7 +10,6 @@ function sum(a, b) { //eslint-disable-line
     var sum = a + b;
     var sumSummary = 'The sum of ' + a + ' and ' + b + ' is ' + sum + '.';
     var sumReturn = [sum, sumSummary];
-    console.log(sumReturn);
     return sumReturn;
 }
 
@@ -75,7 +74,25 @@ Test this function by hand in the console to get it working, and when you think 
 var testArray = [2, 3, 4]; //eslint-disable-line
 
 function sumArray(sumArr) { //eslint-disable-line
-
+    var currSum = 0;
+    var arraySummary = "";
+    for (var i = 0; i < (sumArr.length); i++) {
+        console.log('currSum is ' + currSum + ' at top of loop.');
+        currSum = sum(currSum, sumArr[i])[0];
+        console.log('added ' + sumArr[i] + ' to current sum. current sum is ' + currSum);
+        arraySummary = sum(arraySummary, sumArr[i])[0];
+        if (i < (sumArr.length - 1)) {
+            arraySummary = sum(arraySummary, ',')[0];
+            console.log('added comma; arraySummary is ' + arraySummary);
+        }
+    }
+    console.log('currSum is ' + currSum);
+    console.log('arraySummary before adding end message is ' + arraySummary);
+    arraySummary = sum(arraySummary, ' was passed in as an array of numbers, and ' + currSum + ' is their sum.')[0];
+    console.log(arraySummary);
+    var arrReturn = [currSum, arraySummary];
+    console.log('arrReturn is ' + arrReturn);
+    return arrReturn;
 }
 
 // Here is the test for sumArray(); uncomment it to run it
